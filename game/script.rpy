@@ -25,7 +25,7 @@ label start:
 
     "Ele escuta o alarme do celular tocando e diz:"
 
-    sd "Esse alarme ainda está tocando, mesmo colocando o telefone do lado de meu ouvido não consigo acordar com ele, que hora deve ser…"
+    sd "Esse alarme ainda está tocando, mesmo colocando o telefone do lado de meu ouvido não consigo acordar com ele, que hora deve ser..."
 
     sd "..."
 
@@ -38,7 +38,7 @@ label start:
 
     # É exibida uma sequência de imagens de SD executando os seus afazeres matinais e tomando café a manhã.
 
-    sd "Hoje não tem mais ninguém aqui em casa. Vou aproveitar o dia na paz…"
+    sd "Hoje não tem mais ninguém aqui em casa. Vou aproveitar o dia na paz..."
 
     # De repente o telefone toca e um alerta de mensagem e exibido. SD pega o aparelho para verificar, o conteúdo da mensagem e o seguinte:
 
