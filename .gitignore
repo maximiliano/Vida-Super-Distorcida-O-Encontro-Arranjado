@@ -1,1 +1,7 @@
 *.rpy.bak
+*.rpyc
+errors.txt
+log.txt
+tmp/
+game/cache/
+game/saves/
