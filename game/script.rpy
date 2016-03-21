@@ -4,11 +4,13 @@
 # eg. image eileen happy = "eileen_happy.png"
 
 define sd = Character('SD', color="#c8ffc8")
-define anti = Character('ANTISSOCIAL', color="#ffffff")
+define anti = Character('ANTISSOCIAL', color="#990000")
 
 # 1° ATO: INTRODUÇÃO
 # Act 1: Introduction
 label start:
+    '1° ATO: INTRODUÇÃO'
+
     'SD esta dormindo em sua cama na manhã de sábado.\nO seu telefone já está alarmando a mais de uma hora e ele sequer o escutava. Todos tinham saído de casa e ele está só.'
 
     # O seu rosto e enquadrado em um zoom e começa a ser visto que ele está sonhando com um mudo de aventuras.
@@ -85,4 +87,81 @@ label start:
 
     sd 'Espero que não seja nenhuma sacanagem. Melhor ir organizar as coisas e me arrumar para este encontro. Imagino como será a personalidade desta garota.'
 
+    jump act_2
+
+label act_2:
+
+    '2° ATO: O ENCOSTO ANTISSOCIAL'
+    'Apos receber a mensagem confirmando o encontro arranjado, uma visita inesperada aparece.'
+    'Um ser de forma bizarra com aparência roliça de olhos grandes, sorriso largo e pele com uma coloração roxo acinzentado meio transparente, que SD chama de "ENCOSTO ANTISSOCIAL" começa a falar.'
+
+    anti 'Ei você sabe claramente que isto deve ser apenas uma brincadeira de mau gosto deste seu "amigo".'
+
+    sd 'A não você de novo, eu pensei que tinha se livrado de sua existência a meses atrás.'
+
+    anti 'Rerere... Você sabe muito bem que eu sou parte de você e que sua insegurança com os "relacionamentos humanos" me fortalece. Ir a este suposto encontro é uma perda de tempo. É muito melhor a gente ficar em casa assistindo aqueles episódios de animes que saem hoje.'
+
+    sd 'Eu estou cogitando isto, mas não posso passar mais 25 anos todo dia apenas sentado em uma cadeira de plástico rachada e desligado da realidade assistindo desenhos e escrevendo roteiros autobiográficos para tirinhas que fico enrolando para publicar e games de simuladores de relacionamento... Além do mais mesmo se esta garota não apareça eu estou querendo ver aquela exposição.'
+
+    anti 'Sua lógica é bastante coerente, eu gostaria de vê-la também. Hoje eu irei lhe acompanhar.'
+
+    sd '... Só o que faltava, um encosto interessado em obras de artes egípcias.'
+
+    anti 'Quem disse que eu quero ver aqueles cacarecos. Estou interessado em ver a garota... Rerere...'
+
+    sd 'Ferrou-se...'
+
+    anti 'Espero que ela não queria que você não pague a entrada dela, pois se isto acontecer ficaremos sem dinheiro para compra o 10° volume daquele mangá neste mês.'
+
+    sd 'Ixi... Tinha me esquecido, mas que seja. Talvez este seja um sinal de que devo mudar as minhas prioridades de temas fantasiosos para o complexo mundo real.'
+
+    anti 'Você que sabe... Rerere...'
+
+    sd 'Pensando bem, me pergunto se estou falando estas besteiras com você em voz alta ou apenas na minha imaginação. Pois se estiver falando alto os vizinhos devem estar achando que doido ou esquizofrênico.'
+
+    anti 'Quem sabe talvez você esteja, talvez não. Mas com certeza você logo descobrirá... Rerere...'
+
+    # Com esta última afirmativa a imagem do encosto desaparece da vista de SD, que pensa:
+
+    sd 'Não devia ter tentado aquele método de criação de Tulpas (uma criatura materializada pelo pensamento humano que deve servir ao seu criador). Agora de vez em quando fica me aparecendo estas coisas estranhas.'
+
+    # Após organizar algumas coisas SD, começa a se arrumar para sair.
+
+    sd 'Está na hora de se arrumar. Vou tomar banho.'
+
+    # _DESAFIO DO ATO 2: A ARANHA
+
+    "Apos o banho o protagonista pega a toalha e nela esta uma enorme aranha armadeira, o que ele deve fazer?"
+
+    # Dependendo da resposta a aranha picará o protagonista encerrando o jogo e exibindo uma imagem de derrota.
+
+menu:
+        'Tentar capturar a aranha.': # Falha, game over
+            jump spider_fight_catch
+
+        'Tenta matar a aranha com a toalha.': # Falha, mas o jogo continua
+            jump spider_fight_kill
+
+        'Joga a toalha para o outro lado do banheiro e fecha a porta.': # Sucesso
+            jump spider_fight_escape
+
+label spider_fight_catch:
+    'Ao tentar capturar a aranha, ela pula no seu braço e te pica. Infelizmente você não ganha poderes, e agoniza envenenado até a sua morte.'
+    'GAME OVER'
     return
+
+label spider_fight_kill:
+    $ spider_fight_choice = 'kill'
+    'Você tenta bater com a toalha na parede para esmagar a aranha e ela escapa pulando, por sorte ela caí no sanitário.'
+    'Você dá descarga e saí do banheiro.'
+    jump after_spider_fight
+
+label spider_fight_escape:
+    $ spider_fight_choice = 'escape'
+    'SUCESSO! A aranha agora está trancafiada no banheiro.'
+    jump after_spider_fight
+
+
+label after_spider_fight:
+    'Continua...'
+
