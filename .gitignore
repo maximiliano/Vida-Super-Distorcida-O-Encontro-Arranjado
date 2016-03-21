@@ -2,6 +2,7 @@
 *.rpyc
 errors.txt
 log.txt
+traceback.txt
 tmp/
 game/cache/
 game/saves/
